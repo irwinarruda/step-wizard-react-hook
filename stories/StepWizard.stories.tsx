@@ -1,5 +1,7 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
+import * as yup from 'yup';
+import { useFormContext } from 'react-hook-form';
 
 import { StepWizardWrapper, StepWizardTab } from '../src';
 
@@ -17,8 +19,15 @@ export default {
 export const DefaultStepWizard = () => {
     return (
         <MyStepWizard onSubmit={(data) => console.log(data)}>
-            <StepWizardTab name="Step 1">
-                <p>Step 1</p>
+            <StepWizardTab
+                name="Step 1"
+                validationSchema={yup.object().shape({
+                    phone: yup.string().required('Requerido'),
+                })}
+            >
+                <div>
+                    <Input name="phone" />
+                </div>
             </StepWizardTab>
 
             <StepWizardTab name="Step 2">
@@ -30,4 +39,9 @@ export const DefaultStepWizard = () => {
             </StepWizardTab>
         </MyStepWizard>
     );
+};
+
+export const Input = ({ name }) => {
+    const { register } = useFormContext();
+    return <input {...register(name)} />;
 };

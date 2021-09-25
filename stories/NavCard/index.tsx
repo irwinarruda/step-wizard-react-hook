@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
-import { useStepWizard } from '../StepWizardProvider';
+import { useStepWizard } from '../../src';
 
 import { Container } from './styles';
 
@@ -31,7 +31,7 @@ const NavCard: React.FC<NavCardProps> = ({ isDashboard = true }) => {
                         key={
                             tab.id
                                 ? tab.id
-                                : tab.name?.toString().replaceAll(' ', '_')
+                                : tab.name?.toString().replace(/ /g, '_')
                         }
                     >
                         {tab.children}
