@@ -5,7 +5,7 @@ This is an attempt to create a form that validates as the user goes through each
 ## Install
 
 ```
-yarn add react-hook-form-step-wizard react-hook-form @hookform/resolvers yup
+yarn add step-wizard-react-hook react-hook-form @hookform/resolvers yup
 ```
 
 ## Code Example
@@ -13,7 +13,7 @@ yarn add react-hook-form-step-wizard react-hook-form @hookform/resolvers yup
 ```tsx
 import React from 'react';
 
-import { StepWizardWrapper, StepWizardTab } from 'react-hook-form-step-wizard';
+import { StepWizardWrapper, StepWizardTab } from 'step-wizard-react-hook';
 
 const MyStepWizard = StepWizardWrapper(<TabComponent />);
 

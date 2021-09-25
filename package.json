@@ -1,8 +1,8 @@
 {
-  "name": "react-hook-form-step-wizard",
-  "version": "0.1.0",
+  "name": "step-wizard-react-hook",
+  "version": "0.2.0",
   "main": "dist/index.js",
-  "module": "dist/react-hook-form-step-wizard.esm.js",
+  "module": "dist/step-wizard-react-hook.esm.js",
   "typings": "dist/index.d.ts",
   "author": "irwinarruda",
   "license": "MIT",
@@ -47,5 +47,17 @@
     "typescript": "^4.4.3",
     "yup": "^0.32.9"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": [
+    "step wizard",
+    "form step",
+    "react step wizard",
+    "react-hook-form",
+    "yup",
+    "form-validation",
+    "validation",
+    "form",
+    "forms",
+    "typescript"
+  ]
 }
