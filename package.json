@@ -1,8 +1,8 @@
 {
-  "name": "react-hook-forms-step-wizard",
+  "name": "react-hook-form-step-wizard",
   "version": "0.1.0",
   "main": "dist/index.js",
-  "module": "dist/react-hook-forms-step-wizard.esm.js",
+  "module": "dist/react-hook-form-step-wizard.esm.js",
   "typings": "dist/index.d.ts",
   "author": "irwinarruda",
   "license": "MIT",
