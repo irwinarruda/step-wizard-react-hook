@@ -24,7 +24,6 @@ type StepWizardContextProps = {
     aditionalData?: {
         [key: string]: any;
     };
-    setStep: React.Dispatch<React.SetStateAction<number>>;
     gotoStep: (newStep?: number) => void;
     nextStep: () => void;
     previousStep: () => void;
@@ -32,14 +31,13 @@ type StepWizardContextProps = {
 
 type StepWizardProviderProps<FormValues> = UseFormProps & {
     children: React.ReactNode;
-    render?: React.ReactNode;
     aditionalData?: {
         [key: string]: any;
     };
     onSubmit: SubmitHandler<FormValues>;
 };
 
-const StepWizardTab: React.FC<StepWizardTabProps> = ({ children }) => {
+const StepWizardTab = ({ children }: StepWizardTabProps) => {
     return <>{children}</>;
 };
 
@@ -49,7 +47,6 @@ const StepWizardWrapper = (viewComponent: React.ReactNode) => <
     FormValues extends FieldValues
 >({
     children,
-    render,
     onSubmit,
     aditionalData,
     ...props
@@ -58,7 +55,14 @@ const StepWizardWrapper = (viewComponent: React.ReactNode) => <
     const childrenArray = React.Children.toArray(
         children,
     ) as React.ReactElement<StepWizardTabProps>[];
-    const tabs = childrenArray.map((child) => child.props);
+    const tabs = childrenArray.map((child) => {
+        if (child.type !== StepWizardTab) {
+            throw new Error(
+                'You should only use the StepWizardTab component inside Wrapper.',
+            );
+        }
+        return child.props;
+    });
     const [step, setStep] = React.useState<number>(0);
     const currentTab = tabs[step];
     const isLastStep = step === tabs.length - 1;
@@ -117,7 +121,6 @@ const StepWizardWrapper = (viewComponent: React.ReactNode) => <
                     currentTab,
                     aditionalData,
                     step,
-                    setStep,
                     gotoStep,
                     nextStep,
                     previousStep,
