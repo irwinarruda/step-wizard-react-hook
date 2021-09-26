@@ -1,5 +1,6 @@
 import { terser } from 'rollup-plugin-terser';
 import peerDeps from 'rollup-plugin-peer-deps-external';
+import rebase from 'rollup-plugin-rebase';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import url from '@rollup/plugin-url';
@@ -37,6 +38,7 @@ export default {
         }),
         url(),
         image(),
+        rebase(),
         terser(),
     ],
 };
