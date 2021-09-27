@@ -149,6 +149,7 @@ export {
     StepWizardTabProps,
     StepWizardContextProps,
     StepWizardProviderProps,
+    StepWizardContext,
     StepWizardTab,
     StepWizardWrapper,
     useStepWizard,

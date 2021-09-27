@@ -42,7 +42,7 @@ StepWizardWrapper needs to be called with the layout component inside so that it
 
 | Key             | Type                        | Required | Description                                                                            |
 | --------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------- |
-| `onSubmit`      | `SubmitHandler<FormValues>` | `true`   | Create a unique identifier if needed.                                                  |
+| `onSubmit`      | `SubmitHandler<FormValues>` | `true`   | On submit event for the last step.                                                     |
 | `aditionalData` | `{ [key: string]: any }`    | `false`  | Any additional data you want to provide in case you don't want to use another Context. |
 | `children`      | `React.ReactNode`           | `true`   | Tabs indicating each step of the form.                                                 |
 
